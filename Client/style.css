@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Global Styles */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #e8f0fe;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239ec2f7' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Container for the form */
+.container {
+  background: linear-gradient(135deg, #ffffff, #f5f7fa);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 650px;
+  margin: 2rem auto;
+  position: relative;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Input Styles */
+.area, .location {
+  background: #ffffff;
+  border: 2px solid #e0e0e0;
+  padding: 0.75rem;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1.25rem;
+  height: 3rem;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.area:focus, .location:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  outline: none;
+}
+
+/* Switch Field (Radio Buttons) */
+.switch-field {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.switch-field input {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+}
+
+.switch-field label {
+  background-color: #f5f7fa;
+  color: #7f8c8d;
+  font-size: 0.875rem;
+  line-height: 1;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: 500;
+  flex: 1 0 calc(33.333% - 0.5rem);
+  margin: 0.25rem;
+}
+
+.switch-field label:hover {
+  background-color: #ecf0f1;
+}
+
+.switch-field input:checked + label {
+  background-color: #3498db;
+  color: white;
+  border-color: #3498db;
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+/* Button Styles */
+.submit {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  width: 100%;
+  border: 0;
+  padding: 0.75rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+.submit:hover {
+  background: linear-gradient(135deg, #2980b9, #3498db);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+}
+
+/* Result Box Styles */
+.result {
+  background: #ffffff;
+  border: 2px solid #e0e0e0;
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  font-size: 1.125rem;
+  text-align: center;
+  color: #333;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.625rem;
+}
+
+/* Form Container */
+.form {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .area, .location, .submit {
+    height: 3rem;
+  }
+
+  h2 {
+    font-size: 1.125rem;
+  }
+
+  .result {
+    font-size: 1rem;
+  }
+
+  .switch-field label {
+    flex: 1 0 calc(50% - 0.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 1.25rem;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .area, .location, .submit {
+    height: 2.75rem;
+    font-size: 0.875rem;
+  }
+
+  .switch-field label {
+    font-size: 0.75rem;
+    padding: 0.625rem 0.75rem;
+    flex: 1 0 calc(50% - 0.5rem);
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .submit {
+    font-size: 0.875rem;
+  }
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.area:focus, .location:focus {
+  animation: pulse 0.5s ease-in-out;
+}
+
+.submit:active {
+  transform: scale(0.95);
+}
+
+/* Smooth transitions */
+.area, .location, .submit, .switch-field label {
+  transition: all 0.3s ease;
+}
+
+/* Hover effects */
+.area:hover, .location:hover {
+  border-color: #bdc3c7;
+}
+
+.switch-field label:hover {
+  transform: translateY(-2px);
+}
+
+/* Additional responsiveness for larger screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 800px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .area, .location, .submit {
+    height: 3.5rem;
+    font-size: 1.125rem;
+  }
+
+  .switch-field label {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .result {
+    font-size: 1.25rem;
+  }
+
+  .result h2 {
+    font-size: 1.75rem;
+  }
+}
+

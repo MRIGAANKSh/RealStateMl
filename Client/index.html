@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Price Prediction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Real Estate Price Prediction</h1>
+            <p class="subtitle">Find the estimated price for your property</p>
+        </header>
+
+        <section class="prediction-form">
+            <form class="form" id="predictionForm">
+                <div class="form-group">
+                    <h2>Area (Square Feet)</h2>
+                    <div class="input-wrapper">
+                        <input 
+                            class="area" 
+                            type="number" 
+                            id="uiSqft" 
+                            name="Squareft" 
+                            value="1000"
+                            min="100"
+                            required
+                            aria-label="Area in square feet"
+                        >
+                        <span class="unit">sq ft</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h2>BHK (Bedrooms)</h2>
+                    <div class="switch-field" role="radiogroup" aria-label="Number of bedrooms">
+                        <input type="radio" id="radio-bhk-1" name="uiBHK" value="1"/>
+                        <label for="radio-bhk-1">1</label>
+                        <input type="radio" id="radio-bhk-2" name="uiBHK" value="2" checked/>
+                        <label for="radio-bhk-2">2</label>
+                        <input type="radio" id="radio-bhk-3" name="uiBHK" value="3"/>
+                        <label for="radio-bhk-3">3</label>
+                        <input type="radio" id="radio-bhk-4" name="uiBHK" value="4"/>
+                        <label for="radio-bhk-4">4</label>
+                        <input type="radio" id="radio-bhk-5" name="uiBHK" value="5"/>
+                        <label for="radio-bhk-5">5</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h2>Bathrooms</h2>
+                    <div class="switch-field" role="radiogroup" aria-label="Number of bathrooms">
+                        <input type="radio" id="radio-bath-1" name="uiBathrooms" value="1"/>
+                        <label for="radio-bath-1">1</label>
+                        <input type="radio" id="radio-bath-2" name="uiBathrooms" value="2" checked/>
+                        <label for="radio-bath-2">2</label>
+                        <input type="radio" id="radio-bath-3" name="uiBathrooms" value="3"/>
+                        <label for="radio-bath-3">3</label>
+                        <input type="radio" id="radio-bath-4" name="uiBathrooms" value="4"/>
+                        <label for="radio-bath-4">4</label>
+                        <input type="radio" id="radio-bath-5" name="uiBathrooms" value="5"/>
+                        <label for="radio-bath-5">5</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h2>Location</h2>
+                    <div class="select-wrapper">
+                        <select 
+                            class="location" 
+                            id="uiLocations" 
+                            required
+                            aria-label="Select location"
+                        >
+                            <option value="" disabled selected>Choose a Location</option>
+                            <!-- Locations will be populated by JavaScript -->
+                        </select>
+                        <span class="select-arrow"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button 
+                        class="submit" 
+                        onclick="onClickedEstimatePrice(event)" 
+                        type="button"
+                        aria-label="Calculate estimated price"
+                    >
+                        <span class="button-content">
+                            <span class="button-icon">💰</span>
+                            <span class="button-text">Estimate Price</span>
+                        </span>
+                    </button>
+                </div>
+
+                <div class="result-container">
+                    <div id="uiEstimatedPrice" class="result" aria-live="polite">
+                        <h2></h2>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <footer class="form-footer">
+            <p>Powered by Mrigaank Sharma</p>
+            <small>© 2024 Real Estate Price Prediction. All rights reserved.</small>
+        </footer>
+    </main>
+</body>
+</html>
