@@ -42,7 +42,7 @@ function onClickedEstimatePrice(event) {
     };
 
     // Backend URL for prediction request
-    var url = "http://127.0.0.1:5000/predict_home_price";
+    var url = "https://realstateml.onrender.com/predict_home_price";
 
     // Make POST request to the backend with JSON data
     $.ajax({
@@ -67,7 +67,7 @@ function onPageLoad() {
     console.log("Document loaded");
 
     // Backend URL to fetch locations
-    var url = "http://127.0.0.1:5000/get_location_names";
+    var url = "https://realstateml.onrender.com/get_location_names";
 
     // Fetch locations from backend
     $.get(url, function(data, status) {
