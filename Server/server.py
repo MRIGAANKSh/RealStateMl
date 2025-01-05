@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import util
+import os
+import util  # Make sure util.py is in the same directory or accessible in your project
 
 app = Flask(__name__)
 CORS(app)  # Enabling CORS for all routes
@@ -56,5 +57,7 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Error loading artifacts: {e}")
         exit(1)  # Exit if the artifacts cannot be loaded
-    
-    app.run(debug=True)  # Start the Flask server
+
+    # Dynamic port binding for deployment platforms
+    port = int(os.environ.get('PORT', 5000))  # Use PORT env variable if available, else default to 5000
+    app.run(host='0.0.0.0', port=port, debug=True)
